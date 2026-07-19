@@ -1,10 +1,15 @@
 import type { Config } from "@puckeditor/core";
+import { HeroComponents, HeroConfigProps } from "./config/hero.config";
 
-type Props = {
+import { FaqGrid } from "./app/components/puck/faq/FaqGrid";
+import { FaqItem } from "./app/components/puck/faq/FaqItem";
+import { FaqCTA } from "./app/components/puck/faq/FaqCTA";
+
+interface Props extends HeroConfigProps {
   HeadingBlock: { title: string };
-};
+}
 
-export const config: Config<Props> = {
+export const config = {
   components: {
     HeadingBlock: {
       fields: {
@@ -19,6 +24,10 @@ export const config: Config<Props> = {
         </div>
       ),
     },
+    ...HeroComponents,
+    FaqGrid,
+    FaqItem,
+    FaqCTA,
   },
 };
 
