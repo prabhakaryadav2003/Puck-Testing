@@ -1,1 +1,32 @@
-{"/":{"root":{"props":{"title":""}},"content":[{"type":"HeadingBlock","props":{"title":"Edit this page by adding /edit to the end of the URL","id":"HeadingBlock-1694032984497"}},{"type":"HeroFineDining","props":{"badge":"Michelin Inspired","subtitle":"Fine Dining Restaurant","title":"An Extraordinary Dining Experience","description":"Discover seasonal tasting menus crafted by award-winning chefs using the finest local ingredients.","image":"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200","imageAlt":"Fine Dining Restaurant","overlay":true,"overlayOpacity":50,"primaryButton":{"text":"Reserve Table","href":"#","target":"_self"},"secondaryButton":{"text":"View Menu","href":"#","target":"_self"},"stats":[{"value":"15+","label":"Years"},{"value":"5★","label":"Rating"},{"value":"50+","label":"Signature Dishes"}],"id":"HeroFineDining-dc8f4db6-4915-4e2e-b518-e94099e6e27b"}},{"type":"FaqGrid","props":{"title":"Frequently Asked Questions","subtitle":"Find answers to common questions.","id":"FaqGrid-662fdc7c-1475-43fb-bdb5-8af3608d09e8"}},{"type":"FaqCTA","props":{"icon":"/pstls-assets/icons/faq-info.svg","title":"Have more questions?","description":"Can't find the answer you're looking for? Please send us a message.","buttonText":"Get in Touch","buttonLink":"#","id":"FaqCTA-d1d7be45-094a-4299-aa91-df0aece96db5"}}],"zones":{"FaqGrid-662fdc7c-1475-43fb-bdb5-8af3608d09e8:faq-items":[{"type":"FaqItem","props":{"icon":"BookOpen","question":"Question","answer":"Answer...","id":"FaqItem-a8fbc22a-5a2e-4bf3-a255-c68e0204cb27"}},{"type":"FaqItem","props":{"icon":"CircleHelp","question":"Question","answer":"Answer...","id":"FaqItem-645d83ed-f69f-4618-a745-d91f5ffb985a"}},{"type":"FaqItem","props":{"icon":"BookOpen","question":"Question","answer":"Answer...","id":"FaqItem-08e85742-fe95-45e6-98a4-5fe546649bf7"}},{"type":"FaqItem","props":{"icon":"CircleHelp","question":"Question","answer":"Answer...","id":"FaqItem-dbc4359e-632f-4651-94bc-273b8bda570c"}}]}}}
+{
+  "/": {
+    "root": {
+      "props": {
+        "title": ""
+      }
+    },
+    "content": [
+      {
+        "type": "Navbar2",
+        "props": {
+          "brandName": "Restaurant",
+          "brandLink": "#hero",
+          "homeLabel": "Home",
+          "homeLink": "#hero",
+          "aboutLabel": "About",
+          "aboutLink": "#about",
+          "menuLabel": "Menu",
+          "menuLink": "#menu",
+          "galleryLabel": "Gallery",
+          "galleryLink": "#gallery",
+          "contactLabel": "Contact",
+          "contactLink": "#contact",
+          "buttonLabel": "Book Table",
+          "buttonLink": "#booking",
+          "id": "Navbar2-1abf266c-4faf-4491-8808-503a75c17826"
+        }
+      }
+    ],
+    "zones": {}
+  }
+}
