@@ -1,25 +1,43 @@
+import fs from "node:fs";
+import path from "node:path";
+import { promisify } from "node:util";
+import { exec } from "node:child_process";
+
 import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
-import fs from "fs";
+
+const execAsync = promisify(exec);
 
 export async function POST(request: Request) {
   const payload = await request.json();
 
+  const dbFile = "database.json";
+
   const existingData = JSON.parse(
-    fs.existsSync("database.json")
-      ? fs.readFileSync("database.json", "utf-8")
-      : "{}"
+    fs.existsSync(dbFile) ? fs.readFileSync(dbFile, "utf8") : "{}",
   );
 
-  const updatedData = {
-    ...existingData,
-    [payload.path]: payload.data,
-  };
+  existingData[payload.path] = payload.data;
 
-  fs.writeFileSync("database.json", JSON.stringify(updatedData));
+  fs.writeFileSync(dbFile, JSON.stringify(existingData, null, 2));
 
-  // Purge Next.js cache
+  // Run the export script
+  await execAsync("npm run export:html");
+
+  const filename =
+    payload.path === "/"
+      ? "index.html"
+      : `${payload.path.replace(/^\//, "").replace(/\//g, "-")}.html`;
+
+  const htmlPath = path.join(process.cwd(), "export", filename);
+
+  const html = fs.readFileSync(htmlPath, "utf8");
+
   revalidatePath(payload.path);
 
-  return NextResponse.json({ status: "ok" });
+  return NextResponse.json({
+    status: "ok",
+    filename,
+    html,
+  });
 }

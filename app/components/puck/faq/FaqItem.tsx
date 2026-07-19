@@ -23,11 +23,11 @@ const icons = {
 
 type IconName = keyof typeof icons;
 
-export type FaqItemProps = {
+export interface FaqItemProps {
   icon: IconName;
   question: string;
   answer: string;
-};
+}
 
 export const FaqItem: ComponentConfig<FaqItemProps> = {
   fields: {

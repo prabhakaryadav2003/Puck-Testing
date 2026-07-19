@@ -1,9 +1,9 @@
 import { ComponentConfig, DropZone } from "@puckeditor/core";
 
-export type FaqGridProps = {
+export interface FaqGridProps {
   title: string;
   subtitle: string;
-};
+}
 
 export const FaqGrid: ComponentConfig<FaqGridProps> = {
   fields: {

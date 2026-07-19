@@ -1,19 +1,49 @@
-import type { Config } from "@puckeditor/core";
-import { HeroComponents, HeroConfigProps } from "./config/hero.config";
+import { FaqGrid, FaqGridProps } from "./app/components/puck/faq/FaqGrid";
+import { FaqItem, FaqItemProps } from "./app/components/puck/faq/FaqItem";
+import { FaqCTA, FaqCTAProps } from "./app/components/puck/faq/FaqCTA";
+import {
+  Carousel,
+  CarouselProps,
+} from "./app/components/puck/carousel/Carousel";
+import {
+  CarouselSlide,
+  CarouselSlideProps,
+} from "./app/components/puck/carousel/CarouselSlide";
+import { Config } from "@puckeditor/core";
 
-import { FaqGrid } from "./app/components/puck/faq/FaqGrid";
-import { FaqItem } from "./app/components/puck/faq/FaqItem";
-import { FaqCTA } from "./app/components/puck/faq/FaqCTA";
-
-interface Props extends HeroConfigProps {
-  HeadingBlock: { title: string };
+interface Props {
+  HeadingBlock: {
+    title: string;
+  };
+  FaqGrid: FaqGridProps;
+  FaqItem: FaqItemProps;
+  FaqCTA: FaqCTAProps;
+  Carousel: CarouselProps;
+  CarouselSlide: CarouselSlideProps;
 }
 
-export const config = {
+export const config: Config<Props> = {
+  categories: {
+    Layout: {
+      title: "Layout",
+      components: ["Carousel", "CarouselSlide"],
+    },
+    FAQ: {
+      title: "FAQ",
+      components: ["FaqGrid", "FaqItem", "FaqCTA"],
+    },
+    Common: {
+      title: "Common",
+      components: ["HeadingBlock"],
+    },
+  },
+
   components: {
     HeadingBlock: {
       fields: {
-        title: { type: "text" },
+        title: {
+          type: "text",
+        },
       },
       defaultProps: {
         title: "Heading",
@@ -24,10 +54,12 @@ export const config = {
         </div>
       ),
     },
-    ...HeroComponents,
+
     FaqGrid,
     FaqItem,
     FaqCTA,
+    Carousel,
+    CarouselSlide,
   },
 };
 

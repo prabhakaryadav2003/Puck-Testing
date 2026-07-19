@@ -1,12 +1,12 @@
 import { ComponentConfig } from "@puckeditor/core";
 
-export type FaqCTAProps = {
+export interface FaqCTAProps {
   icon: string;
   title: string;
   description: string;
   buttonText: string;
   buttonLink: string;
-};
+}
 
 export const FaqCTA: ComponentConfig<FaqCTAProps> = {
   fields: {
