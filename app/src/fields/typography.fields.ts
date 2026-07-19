@@ -1,59 +1,48 @@
-export const createTypographyFields = (prefix: string) => ({
-  [`${prefix}FontSize`]: {
-    type: "number",
-  },
+import type { Fields } from "@puckeditor/core";
 
-  [`${prefix}FontWeight`]: {
-    type: "select",
-    options: [
-      {
-        label: "Normal",
-        value: "400",
-      },
-      {
-        label: "Medium",
-        value: "500",
-      },
-      {
-        label: "Semi Bold",
-        value: "600",
-      },
-      {
-        label: "Bold",
-        value: "700",
-      },
-    ],
-  },
+type TypographyFieldKeys<T extends string> =
+  | `${T}FontSize`
+  | `${T}FontWeight`
+  | `${T}FontStyle`
+  | `${T}TextDecoration`
+  | `${T}Color`;
 
-  [`${prefix}FontStyle`]: {
-    type: "select",
-    options: [
-      {
-        label: "Normal",
-        value: "normal",
-      },
-      {
-        label: "Italic",
-        value: "italic",
-      },
-    ],
-  },
+export function createTypographyFields<T extends string>(
+  prefix: T,
+): Record<TypographyFieldKeys<T>, Fields[string]> {
+  return {
+    [`${prefix}FontSize`]: {
+      type: "number",
+    },
 
-  [`${prefix}TextDecoration`]: {
-    type: "select",
-    options: [
-      {
-        label: "None",
-        value: "none",
-      },
-      {
-        label: "Underline",
-        value: "underline",
-      },
-    ],
-  },
+    [`${prefix}FontWeight`]: {
+      type: "select",
+      options: [
+        { label: "Normal", value: "400" },
+        { label: "Medium", value: "500" },
+        { label: "Semi Bold", value: "600" },
+        { label: "Bold", value: "700" },
+      ],
+    },
 
-  [`${prefix}Color`]: {
-    type: "text",
-  },
-});
+    [`${prefix}FontStyle`]: {
+      type: "select",
+      options: [
+        { label: "Normal", value: "normal" },
+        { label: "Italic", value: "italic" },
+      ],
+    },
+
+    [`${prefix}TextDecoration`]: {
+      type: "select",
+      options: [
+        { label: "None", value: "none" },
+        { label: "Underline", value: "underline" },
+      ],
+    },
+
+    [`${prefix}Color`]: {
+      type: "text",
+    },
+  } as Record<TypographyFieldKeys<T>, Fields[string]>;
+}
