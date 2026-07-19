@@ -79,7 +79,7 @@ export const Navbar2: ComponentConfig<Navbar2Props> = {
   },
 
   defaultProps: {
-    brandName: "Restaurant",
+    brandName: "Bistro",
     brandLink: "#hero",
 
     homeLabel: "Home",
@@ -97,7 +97,7 @@ export const Navbar2: ComponentConfig<Navbar2Props> = {
     contactLabel: "Contact",
     contactLink: "#contact",
 
-    buttonLabel: "Book Table",
+    buttonLabel: "Reserve Table",
     buttonLink: "#booking",
   },
 
@@ -128,35 +128,59 @@ export const Navbar2: ComponentConfig<Navbar2Props> = {
     ];
 
     return (
-      <header className='sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur'>
+      <header className='sticky top-0 z-50 w-full border-b border-stone-200/80 bg-[#FAF7F2]/95 backdrop-blur-xl'>
+        <div className='absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D4A373] to-transparent' />
+
         <nav
           className='mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8'
           aria-label='Global'
         >
           <a
             href={brandLink}
-            className='text-xl font-bold tracking-tight text-gray-900 transition hover:text-blue-600'
             onClick={() => setIsOpen(false)}
+            className='group flex items-center gap-3 transition-transform duration-300 hover:scale-[1.01]'
           >
-            {brandName}
+            <div className='flex h-11 w-11 items-center justify-center rounded-2xl bg-[#8B5E3C] text-lg font-bold text-white shadow-lg shadow-[#8B5E3C]/20 transition-transform duration-300 group-hover:-rotate-3'>
+              {brandName.charAt(0).toUpperCase()}
+            </div>
+
+            <div className='leading-tight'>
+              <div className='text-xl font-bold tracking-tight text-[#1F2937]'>
+                {brandName}
+              </div>
+              <div className='-mt-0.5 text-[11px] font-medium uppercase tracking-[0.28em] text-[#8B5E3C]/80'>
+                Premium Dining
+              </div>
+            </div>
           </a>
 
-          <div className='hidden items-center gap-x-8 md:flex'>
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  item.active ? "text-blue-600" : "text-gray-600"
-                }`}
-              >
-                {item.label}
-              </a>
-            ))}
+          <div className='hidden items-center gap-2 lg:flex'>
+            <div className='mr-2 flex items-center gap-1 rounded-full border border-stone-200 bg-white px-2 py-1 shadow-sm'>
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={`group relative rounded-full px-4 py-2 text-[15px] font-medium transition-all duration-300 ${
+                    item.active
+                      ? "text-[#8B5E3C]"
+                      : "text-stone-600 hover:text-[#8B5E3C]"
+                  }`}
+                >
+                  <span className='relative z-10'>{item.label}</span>
+                  <span
+                    className={`absolute inset-x-3 bottom-1 h-0.5 origin-left rounded-full bg-[#8B5E3C] transition-all duration-300 ${
+                      item.active
+                        ? "scale-x-100 opacity-100"
+                        : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"
+                    }`}
+                  />
+                </a>
+              ))}
+            </div>
 
             <a
               href={buttonLink}
-              className='inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-700'
+              className='inline-flex items-center justify-center rounded-2xl bg-[#8B5E3C] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#8B5E3C]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#73492C] hover:shadow-xl hover:shadow-[#8B5E3C]/25 active:translate-y-0'
             >
               {buttonLabel}
             </a>
@@ -164,70 +188,70 @@ export const Navbar2: ComponentConfig<Navbar2Props> = {
 
           <button
             type='button'
-            className='inline-flex items-center justify-center rounded-lg border border-gray-200 p-2 text-gray-700 transition hover:bg-gray-100 md:hidden'
+            className='inline-flex items-center justify-center rounded-2xl border border-stone-200 bg-white p-2.5 text-stone-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#8B5E3C]/30 hover:text-[#8B5E3C] hover:shadow-md lg:hidden'
             aria-label='Toggle navigation'
             aria-expanded={isOpen}
             onClick={() => setIsOpen((prev) => !prev)}
           >
             <span className='sr-only'>Open menu</span>
-            {isOpen ? (
-              <svg
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-                strokeWidth={2}
-                aria-hidden='true'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  d='M6 18L18 6M6 6l12 12'
-                />
-              </svg>
-            ) : (
-              <svg
-                className='h-6 w-6'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-                strokeWidth={2}
-                aria-hidden='true'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  d='M4 6h16M4 12h16M4 18h16'
-                />
-              </svg>
-            )}
+
+            <div className='relative h-5 w-5'>
+              <span
+                className={`absolute left-0 top-1 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                  isOpen ? "translate-y-2 rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-2.5 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                  isOpen ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-4 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                  isOpen ? "-translate-y-2 -rotate-45" : ""
+                }`}
+              />
+            </div>
           </button>
         </nav>
 
-        {isOpen && (
-          <div className='border-t border-gray-200 bg-white md:hidden'>
-            <div className='mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6 lg:px-8'>
+        <div
+          className={`overflow-hidden border-t border-stone-200 bg-[#FAF7F2] lg:hidden transition-all duration-300 ease-out ${
+            isOpen ? "max-h-[520px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className='mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6 lg:px-8'>
+            <div className='mb-2 rounded-2xl border border-stone-200 bg-white p-2 shadow-sm'>
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className='rounded-lg px-3 py-3 text-sm font-medium text-gray-700 transition hover:bg-gray-50 hover:text-blue-600'
+                  className={`flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300 ${
+                    item.active
+                      ? "bg-[#8B5E3C]/10 text-[#8B5E3C]"
+                      : "text-stone-700 hover:bg-stone-50 hover:text-[#8B5E3C]"
+                  }`}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  <span
+                    className={`h-2 w-2 rounded-full ${
+                      item.active ? "bg-[#8B5E3C]" : "bg-stone-300"
+                    }`}
+                  />
                 </a>
               ))}
-
-              <a
-                href={buttonLink}
-                onClick={() => setIsOpen(false)}
-                className='mt-2 inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700'
-              >
-                {buttonLabel}
-              </a>
             </div>
+
+            <a
+              href={buttonLink}
+              onClick={() => setIsOpen(false)}
+              className='inline-flex items-center justify-center rounded-2xl bg-[#8B5E3C] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#8B5E3C]/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#73492C] hover:shadow-xl hover:shadow-[#8B5E3C]/25 active:translate-y-0'
+            >
+              {buttonLabel}
+            </a>
           </div>
-        )}
+        </div>
       </header>
     );
   },
