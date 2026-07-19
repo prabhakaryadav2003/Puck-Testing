@@ -9,9 +9,11 @@ export const FaqGrid: ComponentConfig<FaqGridProps> = {
   fields: {
     title: {
       type: "text",
+      contentEditable: true,
     },
     subtitle: {
       type: "textarea",
+      contentEditable: true,
     },
   },
 

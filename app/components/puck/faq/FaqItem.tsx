@@ -46,9 +46,11 @@ export const FaqItem: ComponentConfig<FaqItemProps> = {
     },
     question: {
       type: "text",
+      contentEditable: true,
     },
     answer: {
       type: "textarea",
+      contentEditable: true,
     },
   },
 

@@ -16,14 +16,17 @@ export const FaqCTA: ComponentConfig<FaqCTAProps> = {
 
     title: {
       type: "text",
+      contentEditable: true,
     },
 
     description: {
       type: "textarea",
+      contentEditable: true,
     },
 
     buttonText: {
       type: "text",
+      contentEditable: true,
     },
 
     buttonLink: {

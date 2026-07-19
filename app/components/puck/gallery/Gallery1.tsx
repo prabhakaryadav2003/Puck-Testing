@@ -25,10 +25,12 @@ export const Gallery: ComponentConfig<GalleryProps> = {
 
     title: {
       type: "text",
+      contentEditable: true,
     },
 
     subtitle: {
       type: "textarea",
+      contentEditable: true,
     },
 
     columns: {

@@ -30,6 +30,7 @@ export const Navbar2: ComponentConfig<Navbar2Props> = {
   fields: {
     brandName: {
       type: "text",
+      contentEditable: true,
     },
     brandLink: {
       type: "text",
@@ -37,6 +38,7 @@ export const Navbar2: ComponentConfig<Navbar2Props> = {
 
     homeLabel: {
       type: "text",
+      contentEditable: true,
     },
     homeLink: {
       type: "text",
@@ -44,6 +46,7 @@ export const Navbar2: ComponentConfig<Navbar2Props> = {
 
     aboutLabel: {
       type: "text",
+      contentEditable: true,
     },
     aboutLink: {
       type: "text",
@@ -51,6 +54,7 @@ export const Navbar2: ComponentConfig<Navbar2Props> = {
 
     menuLabel: {
       type: "text",
+      contentEditable: true,
     },
     menuLink: {
       type: "text",
@@ -58,6 +62,7 @@ export const Navbar2: ComponentConfig<Navbar2Props> = {
 
     galleryLabel: {
       type: "text",
+      contentEditable: true,
     },
     galleryLink: {
       type: "text",
@@ -65,6 +70,7 @@ export const Navbar2: ComponentConfig<Navbar2Props> = {
 
     contactLabel: {
       type: "text",
+      contentEditable: true,
     },
     contactLink: {
       type: "text",
@@ -72,6 +78,7 @@ export const Navbar2: ComponentConfig<Navbar2Props> = {
 
     buttonLabel: {
       type: "text",
+      contentEditable: true,
     },
     buttonLink: {
       type: "text",

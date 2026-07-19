@@ -62,12 +62,14 @@ export const Navbar1: ComponentConfig<Navbar1Props> = {
 
     brandName: {
       type: "text",
+      contentEditable: true,
     },
 
     ...createTypographyFields("brand"),
 
     homeLabel: {
       type: "text",
+      contentEditable: true,
     },
     homeLink: {
       type: "text",
@@ -77,6 +79,7 @@ export const Navbar1: ComponentConfig<Navbar1Props> = {
 
     aboutLabel: {
       type: "text",
+      contentEditable: true,
     },
     aboutLink: {
       type: "text",
@@ -86,6 +89,7 @@ export const Navbar1: ComponentConfig<Navbar1Props> = {
 
     servicesLabel: {
       type: "text",
+      contentEditable: true,
     },
     servicesLink: {
       type: "text",
@@ -95,6 +99,7 @@ export const Navbar1: ComponentConfig<Navbar1Props> = {
 
     contactLabel: {
       type: "text",
+      contentEditable: true,
     },
     contactLink: {
       type: "text",
@@ -104,6 +109,7 @@ export const Navbar1: ComponentConfig<Navbar1Props> = {
 
     buttonLabel: {
       type: "text",
+      contentEditable: true,
     },
     buttonLink: {
       type: "text",
