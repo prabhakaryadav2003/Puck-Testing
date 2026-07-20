@@ -43,7 +43,7 @@ export default async function Page({
 
   return (
     <>
-      <Client data={data} />
+      <Client path={path} data={data} />
       <RouteToggle />
     </>
   );
