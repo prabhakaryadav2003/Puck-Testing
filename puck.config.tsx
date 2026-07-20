@@ -3,15 +3,6 @@ import { Config } from "@puckeditor/core";
 import { Navbar1, Navbar1Props } from "./app/components/puck/navbar/Navbar1";
 import { Navbar2, Navbar2Props } from "./app/components/puck/navbar/Navbar2";
 
-// import {
-//   Carousel,
-//   CarouselProps,
-// } from "./app/components/puck/carousel/Carousel";
-// import {
-//   CarouselSlide,
-//   CarouselSlideProps,
-// } from "./app/components/puck/carousel/CarouselSlide";
-
 import { Gallery, GalleryProps } from "./app/components/puck/gallery/Gallery1";
 
 import { FaqGrid, FaqGridProps } from "./app/components/puck/faq/FaqGrid";
@@ -21,6 +12,8 @@ import {
   GalleryItem,
   GalleryItemProps,
 } from "./app/components/puck/gallery/GalleryItem";
+import { Cta1Props, Cta1 } from "./app/components/puck/cta/Cta1";
+import { ButtonProps, Button } from "./app/components/puck/button/Button";
 
 interface Props {
   HeadingBlock: {
@@ -36,6 +29,10 @@ interface Props {
   FaqGrid: FaqGridProps;
   FaqItem: FaqItemProps;
   FaqCTA: FaqCTAProps;
+
+  Cta1: Cta1Props;
+
+  Button: ButtonProps;
 }
 
 export const config: Config<Props> = {
@@ -53,6 +50,16 @@ export const config: Config<Props> = {
     FAQ: {
       title: "FAQ",
       components: ["FaqGrid", "FaqItem", "FaqCTA"],
+    },
+
+    CTA: {
+      title: "CTA",
+      components: ["Cta1"],
+    },
+
+    Button: {
+      title: "Button",
+      components: ["Button"],
     },
 
     Common: {
@@ -89,6 +96,10 @@ export const config: Config<Props> = {
     FaqGrid,
     FaqItem,
     FaqCTA,
+
+    Cta1,
+
+    Button,
   },
 };
 
