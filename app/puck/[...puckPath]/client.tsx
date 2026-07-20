@@ -4,6 +4,7 @@ import type { Data } from "@puckeditor/core";
 import { Puck } from "@puckeditor/core";
 import { useRouter } from "next/navigation";
 import config from "../../../puck.config";
+import { ThemePlugin } from "../../plugin/ThemePlugin";
 
 export function Client({ path, data }: { path: string; data: Partial<Data> }) {
   const router = useRouter();
@@ -24,6 +25,7 @@ export function Client({ path, data }: { path: string; data: Partial<Data> }) {
     <Puck
       config={config}
       data={data}
+      plugins={[ThemePlugin]}
       overrides={{
         headerActions: ({ children }) => (
           <>
