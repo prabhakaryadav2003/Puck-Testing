@@ -33,22 +33,58 @@ export const ThemePlugin: Plugin = {
         "--color-primary",
         theme.primary,
       );
+
       document.documentElement.style.setProperty(
         "--color-secondary",
         theme.secondary,
       );
+
       document.documentElement.style.setProperty(
         "--color-background",
         theme.background,
       );
+
       document.documentElement.style.setProperty(
         "--color-foreground",
         theme.foreground,
       );
+
       document.documentElement.style.setProperty(
         "--radius",
         `${theme.radius}px`,
       );
+
+      // Debug
+      console.group("🎨 Theme Updated");
+      console.log(
+        "--color-primary:",
+        getComputedStyle(document.documentElement).getPropertyValue(
+          "--color-primary",
+        ),
+      );
+      console.log(
+        "--color-secondary:",
+        getComputedStyle(document.documentElement).getPropertyValue(
+          "--color-secondary",
+        ),
+      );
+      console.log(
+        "--color-background:",
+        getComputedStyle(document.documentElement).getPropertyValue(
+          "--color-background",
+        ),
+      );
+      console.log(
+        "--color-foreground:",
+        getComputedStyle(document.documentElement).getPropertyValue(
+          "--color-foreground",
+        ),
+      );
+      console.log(
+        "--radius:",
+        getComputedStyle(document.documentElement).getPropertyValue("--radius"),
+      );
+      console.groupEnd();
     }, [theme]);
 
     const update =

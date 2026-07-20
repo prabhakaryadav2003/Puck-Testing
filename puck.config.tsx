@@ -2,7 +2,8 @@ import { Config } from "@puckeditor/core";
 
 import { Navbar1, Navbar1Props } from "./app/components/puck/navbar/Navbar1";
 import { Navbar2, Navbar2Props } from "./app/components/puck/navbar/Navbar2";
-
+import { Hero2, Hero2Props } from "./app/components/puck/hero/Hero2";
+import { Hero3, Hero3Props } from "./app/components/puck/hero/Hero3";
 import { Gallery, GalleryProps } from "./app/components/puck/gallery/Gallery1";
 import {
   GalleryItem,
@@ -40,6 +41,9 @@ interface Props {
   Navbar2: Navbar2Props;
   ShuffleNavbar: ShuffleNavbarProps;
 
+  Hero2: Hero2Props;
+  Hero3: Hero3Props;
+
   Gallery: GalleryProps;
   GalleryItem: GalleryItemProps;
 
@@ -63,6 +67,11 @@ export const config: Config<Props> = {
     Navbar: {
       title: "Navbar",
       components: ["Navbar1", "Navbar2", "ShuffleNavbar"],
+    },
+
+    Hero: {
+      title: "Hero",
+      components: ["Hero2", "Hero3"],
     },
 
     Gallery: {
@@ -124,6 +133,9 @@ export const config: Config<Props> = {
     Navbar2,
     ShuffleNavbar,
 
+    Hero2,
+    Hero3,
+
     Gallery,
     GalleryItem,
 
@@ -142,4 +154,5 @@ export const config: Config<Props> = {
     NewsletterForm,
   },
 };
+
 export default config;
