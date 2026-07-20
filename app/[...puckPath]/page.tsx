@@ -9,7 +9,7 @@
  * a static file. Subsequent visits will receive the cache. Publishing a page
  * will invalidate the cache as the page is written in /api/puck/route.ts
  */
-
+import { RouteToggle } from "../components/other/RouteToggle";
 import { Client } from "./client";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
@@ -41,7 +41,12 @@ export default async function Page({
     return notFound();
   }
 
-  return <Client data={data} />;
+  return (
+    <>
+      <Client data={data} />
+      <RouteToggle />
+    </>
+  );
 }
 
 // Force Next.js to produce static pages: https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic
