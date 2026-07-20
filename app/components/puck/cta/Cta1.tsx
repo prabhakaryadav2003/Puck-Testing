@@ -44,7 +44,24 @@ export const Cta1: ComponentConfig<Cta1Props> = {
     titleEnd: "that increases your brand's regular profit.",
     description:
       "If you have ever wondered how to develop your brand, this is the place for you. Take a big step forward in growing your business with this great tool.",
-    actions: [],
+    actions: [
+      {
+        type: "Button",
+        props: {
+          text: "Buy Now",
+          href: "#",
+          variant: "primary",
+        },
+      },
+      {
+        type: "Button",
+        props: {
+          text: "Subscribe",
+          href: "#",
+          variant: "secondary",
+        },
+      },
+    ],
   },
 
   render: ({

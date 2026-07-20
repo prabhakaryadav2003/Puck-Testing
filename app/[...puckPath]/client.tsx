@@ -2,11 +2,13 @@
 
 import type { Data } from "@puckeditor/core";
 import { Puck } from "@puckeditor/core";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import config from "../../puck.config";
 
 export function Client({ path, data }: { path: string; data: Partial<Data> }) {
-  const router = useRouter();
+  const pathname = usePathname();
+
+  const isEdit = pathname === "/edit";
 
   const download = (filename: string, content: string) => {
     const blob = new Blob([content], { type: "text/html" });
@@ -50,7 +52,9 @@ export function Client({ path, data }: { path: string; data: Partial<Data> }) {
         headerActions: ({ children }) => (
           <>
             <button
-              onClick={() => router.push("/")}
+              onClick={() => {
+                window.location.href = isEdit ? "/" : "/edit";
+              }}
               style={{
                 padding: "8px 16px",
                 borderRadius: "6px",
@@ -64,7 +68,7 @@ export function Client({ path, data }: { path: string; data: Partial<Data> }) {
                 transition: "all 0.2s ease",
               }}
             >
-              Preview
+              {isEdit ? "Preview" : "Edit"}
             </button>
 
             {children}

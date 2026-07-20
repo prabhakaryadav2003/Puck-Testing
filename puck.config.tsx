@@ -10,6 +10,26 @@ import {
 } from "./app/components/puck/gallery/GalleryItem";
 import { Cta1Props, Cta1 } from "./app/components/puck/cta/Cta1";
 import { ButtonProps, Button } from "./app/components/puck/button/Button";
+import { FaqGridProps, FaqGrid } from "./app/components/puck/faq/FaqGrid";
+import { FaqItemProps, FaqItem } from "./app/components/puck/faq/FaqItem";
+import { FaqCTAProps, FaqCTA } from "./app/components/puck/faq/FaqCTA";
+import {
+  ShuffleNavbarProps,
+  ShuffleNavbar,
+} from "./app/components/shuffle/ShuffleNavbar";
+import { TeamGridProps, TeamGrid } from "./app/components/puck/team/TeamGrid";
+import {
+  TeamMemberProps,
+  TeamMember,
+} from "./app/components/puck/team/TeamMember";
+import {
+  NewsletterSectionProps,
+  NewsletterSection,
+} from "./app/components/puck/newsletter/NewsletterSection";
+import {
+  NewsletterFormProps,
+  NewsletterForm,
+} from "./app/components/puck/newsletter/NewsletterForm";
 
 interface Props {
   HeadingBlock: {
@@ -18,6 +38,7 @@ interface Props {
 
   Navbar1: Navbar1Props;
   Navbar2: Navbar2Props;
+  ShuffleNavbar: ShuffleNavbarProps;
 
   Gallery: GalleryProps;
   GalleryItem: GalleryItemProps;
@@ -29,18 +50,29 @@ interface Props {
   Cta1: Cta1Props;
 
   Button: ButtonProps;
+
+  TeamGrid: TeamGridProps;
+  TeamMember: TeamMemberProps;
+
+  NewsletterSection: NewsletterSectionProps;
+  NewsletterForm: NewsletterFormProps;
 }
 
 export const config: Config<Props> = {
   categories: {
     Navbar: {
       title: "Navbar",
-      components: ["Navbar1", "Navbar2"],
+      components: ["Navbar1", "Navbar2", "ShuffleNavbar"],
     },
 
     Gallery: {
       title: "Gallery",
       components: ["Gallery", "GalleryItem"],
+    },
+
+    Teams: {
+      title: "Teams",
+      components: ["TeamGrid", "TeamMember"],
     },
 
     FAQ: {
@@ -51,6 +83,11 @@ export const config: Config<Props> = {
     CTA: {
       title: "CTA",
       components: ["Cta1"],
+    },
+
+    NewLetter: {
+      title: "Newsletter",
+      components: ["NewsletterSection", "NewsletterForm"],
     },
 
     Button: {
@@ -85,6 +122,7 @@ export const config: Config<Props> = {
 
     Navbar1,
     Navbar2,
+    ShuffleNavbar,
 
     Gallery,
     GalleryItem,
@@ -96,6 +134,12 @@ export const config: Config<Props> = {
     Cta1,
 
     Button,
+
+    TeamGrid,
+    TeamMember,
+
+    NewsletterSection,
+    NewsletterForm,
   },
 };
 export default config;
