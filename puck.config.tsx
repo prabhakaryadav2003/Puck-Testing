@@ -8,25 +8,8 @@ import {
   GalleryItem,
   GalleryItemProps,
 } from "./app/components/puck/gallery/GalleryItem";
-
-import { FaqGrid, FaqGridProps } from "./app/components/puck/faq/FaqGrid";
-import { FaqItem, FaqItemProps } from "./app/components/puck/faq/FaqItem";
-import { FaqCTA, FaqCTAProps } from "./app/components/puck/faq/FaqCTA";
-
-import {
-  ShuffleFAQ,
-  ShuffleFAQProps,
-} from "./app/components/puck/faq/ShuffleFAQ";
-
-import {
-  ShuffleHero,
-  ShuffleHeroProps,
-} from "./app/components/puck/hero/ShuffleHero";
-
-import {
-  ShuffleNavbar,
-  ShuffleNavbarProps,
-} from "./app/components/shuffle/ShuffleNavbar";
+import { Cta1Props, Cta1 } from "./app/components/puck/cta/Cta1";
+import { ButtonProps, Button } from "./app/components/puck/button/Button";
 
 interface Props {
   HeadingBlock: {
@@ -43,9 +26,9 @@ interface Props {
   FaqItem: FaqItemProps;
   FaqCTA: FaqCTAProps;
 
-  ShuffleNavbar: ShuffleNavbarProps;
-  ShuffleHero: ShuffleHeroProps;
-  ShuffleFAQ: ShuffleFAQProps;
+  Cta1: Cta1Props;
+
+  Button: ButtonProps;
 }
 
 export const config: Config<Props> = {
@@ -65,19 +48,14 @@ export const config: Config<Props> = {
       components: ["FaqGrid", "FaqItem", "FaqCTA"],
     },
 
-    Shuffle: {
-      title: "Shuffle",
-      components: [
-        "ShuffleNavbar",
-        "ShuffleHero",
-        "ShuffleFAQ",
-        // Add future Shuffle components here
-        // "ShuffleFeatures",
-        // "ShufflePricing",
-        // "ShuffleTestimonials",
-        // "ShuffleGallery",
-        // "ShuffleFooter",
-      ],
+    CTA: {
+      title: "CTA",
+      components: ["Cta1"],
+    },
+
+    Button: {
+      title: "Button",
+      components: ["Button"],
     },
 
     Common: {
@@ -115,10 +93,9 @@ export const config: Config<Props> = {
     FaqItem,
     FaqCTA,
 
-    // Shuffle Components
-    ShuffleNavbar,
-    ShuffleHero,
-    ShuffleFAQ,
+    Cta1,
+
+    Button,
   },
 };
 export default config;
