@@ -7,23 +7,23 @@
     },
     "content": [
       {
-        "type": "Navbar2",
+        "type": "ShuffleNavbar",
         "props": {
-          "brandName": "Restaurant",
-          "brandLink": "#hero",
-          "homeLabel": "Home",
-          "homeLink": "#hero",
-          "aboutLabel": "About",
-          "aboutLink": "#about",
-          "menuLabel": "Menu",
-          "menuLink": "#menu",
-          "galleryLabel": "Gallery",
-          "galleryLink": "#gallery",
-          "contactLabel": "Contact",
-          "contactLink": "#contact",
-          "buttonLabel": "Book Table",
-          "buttonLink": "#booking",
-          "id": "Navbar2-1abf266c-4faf-4491-8808-503a75c17826"
+          "sectionId": "navbar",
+          "logo": "https://dummyimage.com/160x40/0f172a/ffffff&text=Aurora",
+          "productLabel": "Product",
+          "productLink": "#",
+          "featuresLabel": "Features",
+          "featuresLink": "#",
+          "pricingLabel": "Pricing",
+          "pricingLink": "#",
+          "resourcesLabel": "Resources",
+          "resourcesLink": "#",
+          "loginLabel": "Login",
+          "loginLink": "#",
+          "ctaLabel": "Get Started",
+          "ctaLink": "#",
+          "id": "ShuffleNavbar-1a12595c-913f-4413-955b-e0f2bf29e260"
         }
       }
     ],

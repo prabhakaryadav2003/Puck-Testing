@@ -4,10 +4,6 @@ import { Navbar1, Navbar1Props } from "./app/components/puck/navbar/Navbar1";
 import { Navbar2, Navbar2Props } from "./app/components/puck/navbar/Navbar2";
 
 import { Gallery, GalleryProps } from "./app/components/puck/gallery/Gallery1";
-
-import { FaqGrid, FaqGridProps } from "./app/components/puck/faq/FaqGrid";
-import { FaqItem, FaqItemProps } from "./app/components/puck/faq/FaqItem";
-import { FaqCTA, FaqCTAProps } from "./app/components/puck/faq/FaqCTA";
 import {
   GalleryItem,
   GalleryItemProps,
@@ -102,5 +98,4 @@ export const config: Config<Props> = {
     Button,
   },
 };
-
 export default config;
