@@ -1,94 +1,38 @@
 "use client";
 
 import type { Data } from "@puckeditor/core";
-import { Puck } from "@puckeditor/core";
-import { usePathname, useRouter } from "next/navigation";
+import { Render } from "@puckeditor/core";
+import { useEffect, useState } from "react";
+
 import config from "../../puck.config";
 
-export function Client({ path, data }: { path: string; data: Partial<Data> }) {
-  const pathname = usePathname();
+export function Client({ data }: { path: string; data: Partial<Data> }) {
+  const [isClient, setIsClient] = useState(false);
 
-  const isEdit = pathname === "/edit";
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
-  const download = (filename: string, content: string) => {
-    const blob = new Blob([content], { type: "text/html" });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    a.click();
-
-    URL.revokeObjectURL(url);
-  };
+  if (!isClient) return null;
+  if (data.content) {
+    return <Render config={config} data={data} />;
+  }
 
   return (
-    <Puck
-      config={config}
-      data={data}
-      _experimentalFullScreenCanvas
-      viewports={[
-        {
-          width: 390,
-          label: "Mobile",
-          icon: "Smartphone",
-        },
-        {
-          width: 768,
-          label: "Tablet",
-          icon: "Tablet",
-        },
-        {
-          width: 1280,
-          label: "Desktop",
-          icon: "Monitor",
-        },
-        {
-          width: "100%",
-          label: "Full Width",
-        },
-      ]}
-      overrides={{
-        headerActions: ({ children }) => (
-          <>
-            <button
-              onClick={() => {
-                window.location.href = isEdit ? "/" : "/edit";
-              }}
-              style={{
-                padding: "8px 16px",
-                borderRadius: "6px",
-                border: "1px solid #d1d5db",
-                background: "#fff",
-                color: "#111827",
-                fontSize: "14px",
-                fontWeight: 500,
-                cursor: "pointer",
-                marginRight: "12px",
-                transition: "all 0.2s ease",
-              }}
-            >
-              {isEdit ? "Preview" : "Edit"}
-            </button>
-
-            {children}
-          </>
-        ),
+    <div
+      style={{
+        display: "flex",
+        height: "100vh",
+        textAlign: "center",
+        justifyContent: "center",
+        alignItems: "center",
       }}
-      onPublish={async (data) => {
-        const response = await fetch("/puck/api", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ data, path }),
-        });
-
-        const { filename, html } = await response.json();
-
-        download(filename, html);
-      }}
-    />
+    >
+      <div>
+        <h1>404</h1>
+        <p>Page does not exist in session storage</p>
+      </div>
+    </div>
   );
 }
 
