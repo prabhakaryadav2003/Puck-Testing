@@ -25,6 +25,54 @@
           "ctaLink": "#",
           "id": "ShuffleNavbar-1a12595c-913f-4413-955b-e0f2bf29e260"
         }
+      },
+      {
+        "type": "NewsletterSection",
+        "props": {
+          "content": [
+            {
+              "type": "NewsletterForm",
+              "props": {
+                "button": [
+                  {
+                    "type": "Button",
+                    "props": {
+                      "id": "Button-0a9defb7-af39-470e-ae65-f8f4587d3d4b",
+                      "text": "SUBSCRIBE TO NEWSLETTER",
+                      "href": "#",
+                      "variant": "primary"
+                    }
+                  }
+                ],
+                "namePlaceholder": "Your Name",
+                "emailPlaceholder": "Email Address",
+                "checkboxText": "I have read and agree to the Terms and Conditions",
+                "inputHeight": 40,
+                "inputRadius": 3,
+                "fontColor": "#ffffff",
+                "placeholderColor": "#9CA3AF",
+                "borderColor": "#D1D5DB",
+                "checkboxColor": "#ffffff",
+                "id": "NewsletterForm-0033ff89-0243-4c35-bcc0-a1620cbecd07"
+              }
+            }
+          ],
+          "title": "Get our latest content in your inbox",
+          "subtitle": "Join over 20,000 satisfied customers",
+          "backgroundColor": "#ffffff",
+          "backgroundImage": "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=1600",
+          "showBackgroundImage": true,
+          "overlayColor": "#000000",
+          "overlayOpacity": 55,
+          "cardBackground": "#232323",
+          "cardOpacity": 95,
+          "cardWidth": 720,
+          "cardPadding": 40,
+          "borderRadius": 4,
+          "titleFontSize": 34,
+          "subtitleFontSize": 14,
+          "id": "NewsletterSection-896869de-81a1-4dca-a4f2-92f30c7acc73"
+        }
       }
     ],
     "zones": {}

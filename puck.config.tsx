@@ -30,6 +30,21 @@ import {
   NewsletterFormProps,
   NewsletterForm,
 } from "./app/components/puck/newsletter/NewsletterForm";
+import { AboutProps, About } from "./app/components/puck/about/About";
+import { About2Props, About2 } from "./app/components/puck/about/About2";
+import { FooterProps, Footer } from "./app/components/puck/footer/Footer";
+import { About3Props, About3 } from "./app/components/puck/about/About3";
+import { About4Props, About4 } from "./app/components/puck/about/About4";
+import { About5Props, About5 } from "./app/components/puck/about/About5";
+import { About6Props, About6 } from "./app/components/puck/about/About6";
+import { Cta5Props, Cta5 } from "./app/components/puck/cta/Cta5";
+import { Cta4Props, Cta4 } from "./app/components/puck/cta/Cta4";
+import { Cta3Props, Cta3 } from "./app/components/puck/cta/Cta3";
+import { Cta2Props, Cta2 } from "./app/components/puck/cta/Cta2";
+import { Hero1Props, Hero1 } from "./app/components/puck/hero/Hero1";
+import { Hero2Props, Hero2 } from "./app/components/puck/hero/Hero2";
+import { Hero3Props, Hero3 } from "./app/components/puck/hero/Hero3";
+import { Hero4Props, Hero4 } from "./app/components/puck/hero/Hero4";
 
 interface Props {
   HeadingBlock: {
@@ -48,6 +63,15 @@ interface Props {
   FaqCTA: FaqCTAProps;
 
   Cta1: Cta1Props;
+  Cta2: Cta2Props;
+  Cta3: Cta3Props;
+  Cta4: Cta4Props;
+  Cta5: Cta5Props;
+
+  Hero1: Hero1Props;
+  Hero2: Hero2Props;
+  Hero3: Hero3Props;
+  Hero4: Hero4Props;
 
   Button: ButtonProps;
 
@@ -56,6 +80,15 @@ interface Props {
 
   NewsletterSection: NewsletterSectionProps;
   NewsletterForm: NewsletterFormProps;
+
+  About: AboutProps;
+  About2: About2Props;
+  About3: About3Props;
+  About4: About4Props;
+  About5: About5Props;
+  About6: About6Props;
+
+  Footer: FooterProps;
 }
 
 export const config: Config<Props> = {
@@ -99,6 +132,24 @@ export const config: Config<Props> = {
       title: "Common",
       components: ["HeadingBlock"],
     },
+
+    New: {
+      title: "New",
+      components: [
+        "About3",
+        "About4",
+        "About5",
+        "About6",
+        "Cta2",
+        "Cta3",
+        "Cta4",
+        "Cta5",
+        "Hero1",
+        "Hero2",
+        "Hero3",
+        "Hero4",
+      ],
+    },
   },
 
   components: {
@@ -132,6 +183,10 @@ export const config: Config<Props> = {
     FaqCTA,
 
     Cta1,
+    Cta2,
+    Cta3,
+    Cta4,
+    Cta5,
 
     Button,
 
@@ -140,6 +195,34 @@ export const config: Config<Props> = {
 
     NewsletterSection,
     NewsletterForm,
+
+    About,
+    About2,
+    About3,
+    About4,
+    About5,
+    About6,
+
+    Hero1,
+    Hero2,
+    Hero3,
+    Hero4,
+
+    Footer,
+  },
+  root: {
+    render: ({ children }) => {
+      return (
+        <div
+          style={{
+            background: "var(--color-background)",
+            minHeight: "100vh",
+          }}
+        >
+          {children}
+        </div>
+      );
+    },
   },
 };
 export default config;
